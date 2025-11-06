@@ -56,7 +56,7 @@ function openModal(taskData = null) {
     document.getElementById("taskTitle").value = taskData.title;
     document.getElementById("taskDescription").value = taskData.description;
     document.getElementById("taskPriority").value = taskData.priority;
-    document.getElementById("taskProject").value = taskData.project;
+    document.getElementById("taskCategory").value = taskData.category;
     document.getElementById("taskDate").value = taskData.rawDate; // data sem formatar
     document.getElementById("taskAssignee").value = taskData.assignee;
   }
@@ -145,7 +145,7 @@ function createTaskCard(taskData) {
                 <div class="content">
                     <div class="alltags">
                         <div class="prioridade"><div class="${taskData.priority}">${taskData.priority}</div></div>
-                        <div class="project-tag"><div class="high">${taskData.project}</div></div>
+                        <div class="project-tag"><div class="high">${taskData.category}</div></div>
                         <div class="tags"></div>
                         <div class="div">${taskData.date}</div>
                     </div>
@@ -252,7 +252,7 @@ taskForm.addEventListener("submit", (e) => {
     title: document.getElementById("taskTitle").value,
     description: document.getElementById("taskDescription").value,
     priority: document.getElementById("taskPriority").value,
-    project: document.getElementById("taskProject").value,
+    category: document.getElementById("taskCategory").value,
     date: formatDate(document.getElementById("taskDate").value),
     rawDate: document.getElementById("taskDate").value,
     assignee: document.getElementById("taskAssignee").value,
@@ -264,7 +264,7 @@ taskForm.addEventListener("submit", (e) => {
     editingCard.querySelector(".implementar-a-funo").textContent = taskData.description;
     editingCard.querySelector(".prioridade div").textContent = taskData.priority;
     editingCard.querySelector(".prioridade div").className = taskData.priority;
-    editingCard.querySelector(".project-tag div").textContent = taskData.project;
+    editingCard.querySelector(".project-tag div").textContent = taskData.category;
     editingCard.querySelector(".div").textContent = taskData.date;
     editingCard.querySelector(".gabrielbegodex").textContent = taskData.assignee;
 
